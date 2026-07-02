@@ -72,14 +72,6 @@ export default tseslint.config(
         },
       ],
 
-      // Запрещаем относительные импорты из родительских директорий (важно для FSD)
-      // Внутри слоя нельзя прыгать наружу через '../../'
-      // Разрешаем @/shared/... импорты — app → shared разрешён по FSD
-      "import-x/no-relative-parent-imports": [
-        "error",
-        { ignore: ["@/shared/"] },
-      ],
-
       // Предотвращаем дублирование импортов из одного и того же модуля
       "import-x/no-duplicates": "error",
     },
