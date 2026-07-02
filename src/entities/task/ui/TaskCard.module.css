@@ -1,0 +1,14 @@
+.taskcard-container {
+  border: 1px solid grey;
+  padding: 10px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-block: 15px;
+}
+
+.taskcard-remove-button {
+  color: red;
+  cursor: pointer;
+}
