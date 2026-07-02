@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import { ITask } from "@/entities/task/model/types";
 
@@ -15,7 +15,7 @@ export const useTasks = (initialTasks: ITask[]): IUseTasks => {
   const [tasks, setTasks] = useState<ITask[]>(initialTasks);
   const [filter, setFilter] = useState<TFilter>(ETaskStatus.ALL);
 
-  const filteredTasks = (() => {
+  const filteredTasks = useMemo(() => {
     if (filter === ETaskStatus.COMPLETED) {
       return tasks.filter((item) => Boolean(item.completed));
     }
@@ -25,10 +25,13 @@ export const useTasks = (initialTasks: ITask[]): IUseTasks => {
     }
 
     return tasks;
-  })();
+  }, [filter, tasks]);
 
-  const removeTask = (id: ITask["id"]) =>
-    setTasks((prev) => prev.filter((item) => item.id !== id));
+  const removeTask = useCallback(
+    (id: ITask["id"]) =>
+      setTasks((prev) => prev.filter((item) => item.id !== id)),
+    [],
+  );
 
   return {
     tasks: filteredTasks,

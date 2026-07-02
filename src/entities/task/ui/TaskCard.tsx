@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 
 import styles from "./TaskCard.module.css";
 import { getTaskStatusText } from "../lib";
@@ -9,21 +9,27 @@ interface ITaskCardProps {
   onRemove: (id: ITask["id"]) => void;
 }
 
-export const TaskCard: FC<ITaskCardProps> = ({ task, onRemove }) => {
-  if (!task?.id) {
-    return null;
-  }
+export const TaskCard: FC<ITaskCardProps> = memo(
+  ({ task, onRemove }) => {
+    if (!task?.id) {
+      return null;
+    }
 
-  const handleRemove = () => onRemove(task.id);
+    const handleRemove = () => onRemove(task.id);
 
-  return (
-    <div className={styles["taskcard-container"]}>
-      <div>{task?.title}</div>
-      <div>{task?.completed}</div>
-      <div>{getTaskStatusText(task.completed)}</div>
-      <div className={styles["taskcard-remove-button"]} onClick={handleRemove}>
-        Удалить
+    return (
+      <div className={styles["taskcard-container"]}>
+        <div>{task?.title}</div>
+        <div>{task?.completed}</div>
+        <div>{getTaskStatusText(task.completed)}</div>
+        <div
+          className={styles["taskcard-remove-button"]}
+          onClick={handleRemove}
+        >
+          Удалить
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  },
+  (prevProps, nextProps) => prevProps.task.id === nextProps.task.id,
+);

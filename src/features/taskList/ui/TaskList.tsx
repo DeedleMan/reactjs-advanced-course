@@ -16,11 +16,9 @@ interface ITaskList {
 export const TaskList: FC<ITaskList> = ({ initialTasks }) => {
   const { tasks, setFilter, removeTask } = useTasks(initialTasks);
 
-  const renderTask = (task: ITask) => {
-    const handleRemove = () => removeTask(task.id);
-
-    return <TaskCard key={task.id} task={task} onRemove={handleRemove} />;
-  };
+  const renderTask = (task: ITask) => (
+    <TaskCard key={task.id} task={task} onRemove={removeTask} />
+  );
 
   return (
     <>
