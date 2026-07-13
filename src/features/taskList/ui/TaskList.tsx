@@ -13,12 +13,16 @@ interface ITaskList {
   initialTasks: ITask[];
 }
 
-export const TaskList: FC<ITaskList> = ({ initialTasks }) => {
-  const { tasks, setFilter, removeTask } = useTasks(initialTasks);
+export const TaskList: FC<ITaskList> = () => {
+  const { tasks, isLoading, setFilter, removeTask } = useTasks();
 
   const renderTask = (task: ITask) => (
     <TaskCard key={task.id} task={task} onRemove={removeTask} />
   );
+
+  if (isLoading) {
+    return <div>Загрузка...</div>;
+  }
 
   return (
     <>
