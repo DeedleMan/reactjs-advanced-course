@@ -1,0 +1,137 @@
+.wizard-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 0 32px 50px;
+}
+
+.wizard-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.wizard-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.wizard-title {
+  margin: 0;
+  text-align: center;
+}
+
+.wizard-desc {
+  color: #6b6375;
+  text-align: center;
+  max-width: 450px;
+}
+
+.wizard-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.wizard-input {
+  padding: 8px 12px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  background: #fff;
+  color: #08060d;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.wizard-input:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+}
+
+.wizard-input::placeholder {
+  color: #6b6375;
+  opacity: 0.6;
+}
+
+.wizard-error {
+  color: #e53e3e;
+  font-size: 13px;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.wizard-email {
+  font-size: 16px;
+  font-weight: 500;
+  color: #08060d;
+  padding: 8px 16px;
+  background: rgba(49, 130, 206, 0.08);
+  border: 1px solid rgba(49, 130, 206, 0.2);
+  border-radius: 6px;
+}
+
+.wizard-email--highlight {
+  color: #3182ce;
+}
+
+.wizard-actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.wizard-actions > * {
+  flex: 1;
+  max-width: 160px;
+}
+
+.wizard-button {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  background: #3182ce;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.wizard-button:hover:not(:disabled) {
+  opacity: 0.88;
+}
+
+.wizard-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.wizard-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.wizard-button--secondary {
+  background: transparent;
+  color: #08060d;
+  border: 1px solid #ccc;
+}
+
+.wizard-button--secondary:hover:not(:disabled) {
+  background: #f3f4f6;
+}
+
+.wizard-check {
+  width: 32px;
+  height: 32px;
+}

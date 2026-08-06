@@ -9,11 +9,7 @@ import { NoTasksPlug } from "./NoTasksPlug";
 import styles from "./TaskList.module.css";
 import { useTasks } from "../model/useTasks";
 
-interface ITaskList {
-  initialTasks: ITask[];
-}
-
-export const TaskList: FC<ITaskList> = () => {
+export const TaskList: FC = () => {
   const { tasks, isLoading, setFilter, removeTask } = useTasks();
 
   const renderTask = (task: ITask) => (

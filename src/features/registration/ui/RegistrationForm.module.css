@@ -1,0 +1,145 @@
+.registrationform-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 450px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.registrationform-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 82px;
+}
+
+.registrationform-input {
+  padding: 8px 12px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.registrationform-error {
+  color: #e53e3e;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.registrationform-button {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  background: #3182ce;
+  color: #fff;
+  cursor: pointer;
+}
+
+.registrationform-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.registrationform-section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.registrationform-link-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  min-height: 68px;
+}
+
+.registrationform-link-row .registrationform-input {
+  flex: 1;
+}
+
+.registrationform-remove-button {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 38px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  color: #e53e3e;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.registrationform-remove-button:hover {
+  background: #fee2e2;
+}
+
+.registrationform-add-button {
+  align-self: flex-start;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px dashed #9ca3af;
+  border-radius: 6px;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.registrationform-add-button:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+  background: #eff6ff;
+}
+
+.registrationform-button--secondary {
+  background: transparent;
+  color: #08060d;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.registrationform-button--secondary:hover:not(:disabled) {
+  background: #f3f4f6;
+}
+
+.registration-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 0;
+}
+
+.registration-success-check {
+  width: 32px;
+  height: 32px;
+}
+
+.registration-success-title {
+  margin: 0;
+  text-align: center;
+}
+
+.registration-success-text {
+  color: #6b6375;
+  text-align: center;
+}
+
+.registration-success-username {
+  font-size: 16px;
+  font-weight: 500;
+  color: #08060d;
+  padding: 8px 16px;
+  background: rgba(49, 130, 206, 0.08);
+  border: 1px solid rgba(49, 130, 206, 0.2);
+  border-radius: 6px;
+}

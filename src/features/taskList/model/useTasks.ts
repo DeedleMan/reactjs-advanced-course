@@ -47,8 +47,8 @@ export const useTasks = (): IUseTasks => {
 
   return {
     tasks: filteredTasks,
-    filter,
     isLoading,
+    filter,
     setFilter,
     removeTask,
   };
