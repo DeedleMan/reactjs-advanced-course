@@ -1,10 +1,8 @@
-import { FC } from "react";
-
 import { ConfirmationStep, EmailStep, SuccessStep } from "./steps";
 import styles from "./SubscriptionWizard.module.css";
 import { useSubscriptionWizard } from "../model/useSubscriptionWizard";
 
-export const SubscriptionWizard: FC = () => {
+export const SubscriptionWizard = () => {
   const {
     state,
     step,

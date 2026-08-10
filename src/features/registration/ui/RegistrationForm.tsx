@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import styles from "./RegistrationForm.module.css";
 import { SuccessScreen } from "./SuccessScreen";
@@ -8,9 +8,9 @@ interface IRegistrationFormProps {
   onSubmit?: (data: TFormData) => void;
 }
 
-export const RegistrationForm: FC<IRegistrationFormProps> = ({
+export const RegistrationForm = ({
   onSubmit = () => {},
-}) => {
+}: IRegistrationFormProps) => {
   const {
     fields,
     errors,

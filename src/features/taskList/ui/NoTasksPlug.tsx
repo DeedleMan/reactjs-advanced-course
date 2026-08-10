@@ -1,7 +1,5 @@
-import { FC } from "react";
-
 import styles from "./NoTasksPlug.module.css";
 
-export const NoTasksPlug: FC = () => (
+export const NoTasksPlug = () => (
   <div className={styles["notasksplug-container"]}>нет задач</div>
 );

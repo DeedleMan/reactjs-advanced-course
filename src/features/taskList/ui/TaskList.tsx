@@ -1,5 +1,3 @@
-import { FC } from "react";
-
 import { ITask } from "@/entities/task/model/types";
 import { TaskCard } from "@/entities/task/ui/TaskCard";
 
@@ -9,7 +7,7 @@ import { NoTasksPlug } from "./NoTasksPlug";
 import styles from "./TaskList.module.css";
 import { useTasks } from "../model/useTasks";
 
-export const TaskList: FC = () => {
+export const TaskList = () => {
   const { tasks, isLoading, setFilter, removeTask } = useTasks();
 
   const renderTask = (task: ITask) => (

@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import styles from "./Header.module.css";
@@ -12,9 +11,14 @@ const navLinks: IHeaderNavLink[] = [
   { to: "/tasks", label: "Задачи" },
   { to: "/register", label: "Регистрация" },
   { to: "/subscribe", label: "Подписка" },
+  { to: "/clickTimer", label: "ClickTimer" },
+  { to: "/previousinput", label: "Previos Input" },
+  { to: "/focustracker", label: "Focus Tracker" },
+  { to: "/debouncedlogger", label: "Debounced Logger" },
+  { to: "/websocketlogger", label: "WebSocket Logger" },
 ];
 
-export const Header: FC = () => {
+export const Header = () => {
   const location = useLocation();
 
   return (

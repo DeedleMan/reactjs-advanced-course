@@ -1,4 +1,4 @@
-import { FC, memo } from "react";
+import { memo } from "react";
 
 import styles from "./TaskCard.module.css";
 import { getTaskStatusText } from "../lib";
@@ -9,8 +9,8 @@ interface ITaskCardProps {
   onRemove: (id: ITask["id"]) => void;
 }
 
-export const TaskCard: FC<ITaskCardProps> = memo(
-  ({ task, onRemove }) => {
+export const TaskCard = memo(
+  ({ task, onRemove }: ITaskCardProps) => {
     if (!task?.id) {
       return null;
     }

@@ -1,12 +1,10 @@
-import { FC } from "react";
-
 import styles from "../SubscriptionWizard.module.css";
 
-export interface ISuccessStepProps {
+interface ISuccessStepProps {
   email: string;
 }
 
-export const SuccessStep: FC<ISuccessStepProps> = ({ email }) => (
+export const SuccessStep = ({ email }: ISuccessStepProps) => (
   <div className={styles["wizard-step"]}>
     <h2 className={styles["wizard-title"]}>Готово!</h2>
     <p className={styles["wizard-desc"]}>

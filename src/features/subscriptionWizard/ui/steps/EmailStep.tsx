@@ -1,5 +1,3 @@
-import { FC } from "react";
-
 import styles from "../SubscriptionWizard.module.css";
 
 export interface IEmailStepProps {
@@ -10,13 +8,13 @@ export interface IEmailStepProps {
   onSubmit: () => void;
 }
 
-export const EmailStep: FC<IEmailStepProps> = ({
+export const EmailStep = ({
   email,
   error,
   pending,
   onChange,
   onSubmit,
-}) => (
+}: IEmailStepProps) => (
   <div className={styles["wizard-step"]}>
     <h2 className={styles["wizard-title"]}>Шаг 1: Ввод email</h2>
     <p className={styles["wizard-desc"]}>

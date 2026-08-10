@@ -1,5 +1,3 @@
-import { FC } from "react";
-
 import styles from "./RegistrationForm.module.css";
 
 export interface ISuccessScreenProps {
@@ -7,10 +5,7 @@ export interface ISuccessScreenProps {
   onReset: () => void;
 }
 
-export const SuccessScreen: FC<ISuccessScreenProps> = ({
-  username,
-  onReset,
-}) => (
+export const SuccessScreen = ({ username, onReset }: ISuccessScreenProps) => (
   <div className={styles["registration-success"]}>
     <h2 className={styles["registration-success-title"]}>Добро пожаловать!</h2>
     <p className={styles["registration-success-text"]}>

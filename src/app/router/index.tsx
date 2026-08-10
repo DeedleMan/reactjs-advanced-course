@@ -4,6 +4,14 @@ import { RegistrationPage } from "@/pages/registration/ui/RegistrationPage";
 import { SubscriptionPage } from "@/pages/subscription/ui/SubscriptionPage";
 import { TaskPage } from "@/pages/tasks/ui/TaskPage";
 
+import {
+  ClickTimer,
+  DebouncedLogger,
+  FocusTracker,
+  PreviousInput,
+  WebSocketLogger,
+} from "@/features/refExamples";
+
 import { RootLayout } from "./ui/RootLayout";
 
 export const router = createBrowserRouter([
@@ -26,6 +34,26 @@ export const router = createBrowserRouter([
       {
         path: "/subscribe",
         element: <SubscriptionPage />,
+      },
+      {
+        path: "/clicktimer",
+        element: <ClickTimer />,
+      },
+      {
+        path: "/previousinput",
+        element: <PreviousInput />,
+      },
+      {
+        path: "/focustracker",
+        element: <FocusTracker />,
+      },
+      {
+        path: "/debouncedlogger",
+        element: <DebouncedLogger />,
+      },
+      {
+        path: "/websocketlogger",
+        element: <WebSocketLogger />,
       },
     ],
   },
