@@ -1,5 +1,3 @@
-import { FC } from "react";
-
 import styles from "../SubscriptionWizard.module.css";
 
 export interface IConfirmationStepProps {
@@ -9,12 +7,12 @@ export interface IConfirmationStepProps {
   onBack: () => void;
 }
 
-export const ConfirmationStep: FC<IConfirmationStepProps> = ({
+export const ConfirmationStep = ({
   email,
   pending,
   onConfirm,
   onBack,
-}) => (
+}: IConfirmationStepProps) => (
   <div className={styles["wizard-step"]}>
     <h2 className={styles["wizard-title"]}>Шаг 2: Подтверждение</h2>
     <p className={styles["wizard-desc"]}>Подтвердите подписку для email</p>

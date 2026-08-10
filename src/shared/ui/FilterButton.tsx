@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 import { ETaskStatus, TFilter } from "../consts";
 
@@ -6,7 +6,7 @@ interface IFilterButtonProps {
   onChange: (filter: TFilter) => void;
 }
 
-export const FilterButton: FC<IFilterButtonProps> = ({ onChange }) => {
+export const FilterButton = ({ onChange }: IFilterButtonProps) => {
   const [currentFilter, setCurrentFilter] = useState(ETaskStatus.ALL);
 
   const renderFilterItem = (status: ETaskStatus) => (
