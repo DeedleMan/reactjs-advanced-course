@@ -1,8 +1,17 @@
 import { RegistrationWidget } from "@/widgets/registration/ui/RegistrationWidget";
 
-export const RegistrationPage = () => (
-  <div>
-    <h1>Регистрация</h1>
-    <RegistrationWidget />
-  </div>
-);
+import { useAuth } from "@/features/authRouting/useAuth";
+
+export const RegistrationPage = () => {
+  const { register: registerUser } = useAuth();
+
+  const handleRegister = async (data: {
+    username: string;
+    email: string;
+    password: string;
+  }): Promise<void> => {
+    await registerUser(data.username, data.email, data.password);
+  };
+
+  return <RegistrationWidget onSubmit={handleRegister} />;
+};

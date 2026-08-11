@@ -4,6 +4,7 @@ import { RegistrationPage } from "@/pages/registration/ui/RegistrationPage";
 import { SubscriptionPage } from "@/pages/subscription/ui/SubscriptionPage";
 import { TaskPage } from "@/pages/tasks/ui/TaskPage";
 
+import { AppRouter } from "@/features/authRouting/AppRouter";
 import {
   ClickTimer,
   DebouncedLogger,
@@ -54,6 +55,10 @@ export const router = createBrowserRouter([
       {
         path: "/websocketlogger",
         element: <WebSocketLogger />,
+      },
+      {
+        path: "/*",
+        element: <AppRouter />,
       },
     ],
   },

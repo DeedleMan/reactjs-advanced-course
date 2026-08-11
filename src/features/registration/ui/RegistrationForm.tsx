@@ -1,15 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 import styles from "./RegistrationForm.module.css";
 import { SuccessScreen } from "./SuccessScreen";
 import { useRegistrationForm, TFormData } from "../model/useRegistrationForm";
 
 interface IRegistrationFormProps {
-  onSubmit?: (data: TFormData) => void;
+  onRegister?: (data: TFormData) => Promise<void>;
 }
 
 export const RegistrationForm = ({
-  onSubmit = () => {},
+  onRegister = async () => {},
 }: IRegistrationFormProps) => {
   const {
     fields,
@@ -25,6 +25,7 @@ export const RegistrationForm = ({
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isSuccess, setIsSuccess] = useState(false);
   const [submittedUsername, setSubmittedUsername] = useState("");
+  const [registerError, setRegisterError] = useState("");
 
   useEffect(() => {
     if (fields.length > 1 && sectionRef.current) {
@@ -32,14 +33,25 @@ export const RegistrationForm = ({
     }
   }, [fields.length]);
 
-  const handleFormSubmit = (data: TFormData) => {
-    onSubmit(data);
-    setSubmittedUsername(data.username);
-    setIsSuccess(true);
-  };
+  const handleFormSubmit = useCallback(
+    async (data: TFormData) => {
+      setRegisterError("");
+      try {
+        await onRegister(data);
+        setSubmittedUsername(data.username);
+        setIsSuccess(true);
+      } catch (err: unknown) {
+        const message =
+          err instanceof Error ? err.message : "Ошибка регистрации";
+        setRegisterError(message);
+      }
+    },
+    [onRegister],
+  );
 
   const handleReset = () => {
     setIsSuccess(false);
+    setRegisterError("");
     reset({
       username: "",
       email: "",
@@ -62,6 +74,10 @@ export const RegistrationForm = ({
       className={styles["registrationform-form"]}
       onSubmit={handleSubmit(handleFormSubmit)}
     >
+      {registerError && (
+        <div className={styles["registrationform-error"]}>{registerError}</div>
+      )}
+
       <label className={styles["registrationform-label"]}>
         Имя пользователя
         <input
