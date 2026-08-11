@@ -1,0 +1,11 @@
+.publicpage-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.publicpage-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
