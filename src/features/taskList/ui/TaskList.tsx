@@ -1,7 +1,7 @@
 import { ITask } from "@/entities/task/model/types";
 import { TaskCard } from "@/entities/task/ui/TaskCard";
 
-import { FilterButton } from "@/shared/ui/FilterButton";
+import { FilterButton } from "@/shared/ui/FilterButton/FilterButton";
 
 import { NoTasksPlug } from "./NoTasksPlug";
 import styles from "./TaskList.module.css";

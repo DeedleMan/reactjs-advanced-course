@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from "react";
 
-import { ETaskStatus, TFilter } from "../consts";
+import { ETaskStatus, TFilter } from "../../consts";
 
 interface IFilterButtonProps {
   onChange: (filter: TFilter) => void;
