@@ -1,5 +1,7 @@
 import { memo } from "react";
 
+import { showConfirmDialog } from "@/shared/ui/ConfirmDialog/useConfirmDialog";
+
 import styles from "./TaskCard.module.css";
 import { getTaskStatusText } from "../lib";
 import { ITask } from "../model/types";
@@ -15,7 +17,16 @@ export const TaskCard = memo(
       return null;
     }
 
-    const handleRemove = () => onRemove(task.id);
+    const handleRemove = async () => {
+      const confirmed = await showConfirmDialog({
+        title: "Удалить элемент?",
+        description: "Это действие необратимо.",
+      });
+
+      if (confirmed) {
+        onRemove(task.id);
+      }
+    };
 
     return (
       <div className={styles["taskcard-container"]}>

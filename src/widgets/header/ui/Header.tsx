@@ -10,6 +10,7 @@ interface IHeaderNavLink {
 }
 
 const navLinks: IHeaderNavLink[] = [
+  { to: "/portal-showcase", label: "Tooltip" },
   { to: "/tasks", label: "Задачи" },
   { to: "/subscribe", label: "Подписка" },
   { to: "/clickTimer", label: "ClickTimer" },

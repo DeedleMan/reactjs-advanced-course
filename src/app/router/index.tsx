@@ -1,5 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
+import { PortalShowcase } from "@/pages/portal-showcase/ui/PortalShowcase";
 import { RegistrationPage } from "@/pages/registration/ui/RegistrationPage";
 import { SubscriptionPage } from "@/pages/subscription/ui/SubscriptionPage";
 import { TaskPage } from "@/pages/tasks/ui/TaskPage";
@@ -22,11 +23,15 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Navigate to="/tasks" replace />,
+        element: <Navigate to="/portal-showcase" replace />,
       },
       {
         path: "/tasks",
         element: <TaskPage />,
+      },
+      {
+        path: "/portal-showcase",
+        element: <PortalShowcase />,
       },
       {
         path: "/register",
