@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
 import { PortalShowcase } from "@/pages/portal-showcase/ui/PortalShowcase";
+import { React19ExamplesPage } from "@/pages/react19Examples/ui/React19ExamplesPage";
 import { RegistrationPage } from "@/pages/registration/ui/RegistrationPage";
 import { SubscriptionPage } from "@/pages/subscription/ui/SubscriptionPage";
 import { TaskPage } from "@/pages/tasks/ui/TaskPage";
@@ -60,6 +61,10 @@ export const router = createBrowserRouter([
       {
         path: "/websocketlogger",
         element: <WebSocketLogger />,
+      },
+      {
+        path: "/react19examples",
+        element: <React19ExamplesPage />,
       },
       {
         path: "/*",

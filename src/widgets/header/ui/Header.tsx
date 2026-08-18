@@ -18,6 +18,7 @@ const navLinks: IHeaderNavLink[] = [
   { to: "/focustracker", label: "Focus Tracker" },
   { to: "/debouncedlogger", label: "Debounced Logger" },
   { to: "/websocketlogger", label: "WebSocket Logger" },
+  { to: "/react19examples", label: "React 19 Examples" },
   { to: "/public", label: "Публичная страница" },
   { to: "/register", label: "Регистрация" },
 ];
